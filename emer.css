@@ -1,0 +1,1038 @@
+/* =================================================
+   BASIC
+================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111111;
+    color: #f5f0e6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* =================================================
+   EMERGENCY HERO
+================================================= */
+
+.emergency-hero {
+
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212, 175, 55, 0.12),
+            transparent 40%
+        ),
+        #111111;
+}
+
+
+/* Animated glow */
+
+.emergency-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(212, 175, 55, 0.06);
+
+    filter: blur(70px);
+
+    animation:
+        emergencyGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes emergencyGlow {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+}
+
+
+/* =================================================
+   EMERGENCY SYMBOL
+================================================= */
+
+.emergency-symbol {
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 50%;
+
+    color: #d4af37;
+
+    font-size: 45px;
+
+    font-weight: 800;
+
+    animation:
+        symbolPulse 2s ease-in-out infinite;
+}
+
+@keyframes symbolPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 0 rgba(212, 175, 55, 0);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 30px rgba(212, 175, 55, 0.15);
+    }
+
+}
+
+
+/* =================================================
+   HERO CONTENT
+================================================= */
+
+.emergency-content {
+    position: relative;
+    z-index: 2;
+}
+
+.emergency-label {
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.emergency-content h1 {
+
+    font-size:
+        clamp(55px, 9vw, 100px);
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 5px;
+
+    animation:
+        emergencyTitle 1s ease forwards;
+}
+
+.emergency-content h2 {
+
+    color: #d4af37;
+
+    font-size:
+        clamp(28px, 5vw, 55px);
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.emergency-description {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+@keyframes emergencyTitle {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =================================================
+   EMERGENCY BUTTONS
+================================================= */
+
+.emergency-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+}
+
+.emergency-call,
+.emergency-whatsapp {
+
+    padding: 16px 35px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.emergency-call {
+
+    background: #d4af37;
+
+    color: #111;
+}
+
+.emergency-call:hover {
+
+    background: #f0d46a;
+
+    color: #111;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(212, 175, 55, 0.2);
+}
+
+.emergency-whatsapp {
+
+    border: 1px solid #d4af37;
+
+    color: #d4af37;
+}
+
+.emergency-whatsapp:hover {
+
+    background: #d4af37;
+
+    color: #111;
+
+    transform: translateY(-5px);
+}
+
+
+/* =================================================
+   EMERGENCY SERVICES
+================================================= */
+
+.emergency-services {
+
+    background: #151515;
+
+    padding: 100px 0;
+}
+
+.section-heading {
+
+    margin-bottom: 60px;
+}
+
+.section-heading p {
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+
+    color: #f5f0e6;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================================
+   EMERGENCY CARD
+================================================= */
+
+.emergency-card {
+
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 35px;
+
+    background: #1c1c1c;
+
+    border:
+        1px solid
+        rgba(212, 175, 55, 0.18);
+
+    transition: 0.4s ease;
+}
+
+.emergency-card:hover {
+
+    transform:
+        translateY(-12px);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.5);
+}
+
+.emergency-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #d4af37;
+
+    transition: 0.4s ease;
+}
+
+.emergency-card:hover::after {
+
+    width: 100%;
+}
+
+.card-number {
+
+    position: absolute;
+
+    top: 12px;
+    right: 20px;
+
+    color:
+        rgba(212, 175, 55, 0.2);
+
+    font-size: 45px;
+
+    font-weight: 800;
+}
+
+.card-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 25px;
+
+    transition: 0.4s ease;
+}
+
+.emergency-card:hover .card-icon {
+
+    transform:
+        scale(1.15)
+        rotate(-5deg);
+}
+
+.emergency-card h3 {
+
+    color: #d4af37;
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+.emergency-card p {
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =================================================
+   FINAL CTA
+================================================= */
+
+.emergency-cta {
+
+    padding: 100px 20px;
+
+    background: #0d0d0d;
+}
+
+.emergency-cta p {
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.emergency-cta h2 {
+
+    font-size:
+        clamp(35px, 6vw, 65px);
+
+    font-weight: 800;
+
+    margin:
+        20px 0 35px;
+}
+
+.big-call-button {
+
+    display: inline-block;
+
+    padding: 18px 40px;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.big-call-button:hover {
+
+    background: #f0d46a;
+
+    color: #111;
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(212, 175, 55, 0.2);
+}
+
+
+/* =================================================
+   FOOTER
+================================================= */
+
+.custom-footer {
+
+    background: #080808;
+
+    padding:
+        60px 20px 30px;
+
+    border-top:
+        1px solid
+        rgba(212, 175, 55, 0.15);
+}
+
+.custom-footer h4 {
+
+    color: #d4af37;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.custom-footer p {
+
+    color: #888;
+}
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+.footer-links a {
+
+    color: #aaa;
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+
+    color: #d4af37;
+}
+
+.copyright {
+
+    font-size: 13px;
+
+    margin-top: 25px;
+}
+
+
+/* =================================================
+   LARGE DESKTOP
+   1200px+
+================================================= */
+
+@media (min-width: 1200px) {
+
+    .emergency-hero {
+        min-height: 75vh;
+    }
+
+    .emergency-services {
+        padding: 120px 0;
+    }
+
+}
+
+
+/* =================================================
+   LAPTOP
+   992px - 1199px
+================================================= */
+
+@media (min-width: 992px)
+and (max-width: 1199px) {
+
+
+    .emergency-hero {
+        min-height: 65vh;
+    }
+
+    .emergency-services {
+        padding: 90px 0;
+    }
+
+}
+
+
+/* =================================================
+   TABLET
+   768px - 991px
+================================================= */
+
+@media (min-width: 768px)
+and (max-width: 991px) {
+
+    .emergency-hero {
+        min-height: 60vh;
+        padding: 70px 25px;
+    }
+
+    .emergency-content h1 {
+        font-size: 70px;
+    }
+
+    .emergency-services {
+        padding: 80px 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =================================================
+   MOBILE
+   Below 768px
+================================================= */
+
+@media (max-width: 767px) {
+
+  
+
+    .emergency-hero {
+        min-height: 70vh;
+        padding: 70px 20px;
+    }
+
+    .emergency-symbol {
+        width: 65px;
+        height: 65px;
+        font-size: 35px;
+    }
+
+    .emergency-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .emergency-content h1 {
+        font-size: 48px;
+        letter-spacing: 2px;
+    }
+
+    .emergency-content h2 {
+        font-size: 30px;
+    }
+
+    .emergency-description {
+        font-size: 15px;
+    }
+
+    .emergency-buttons {
+        flex-direction: column;
+    }
+
+    .emergency-call,
+    .emergency-whatsapp {
+        width: 100%;
+        text-align: center;
+    }
+
+    .emergency-services {
+        padding: 70px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .emergency-card {
+        padding: 30px;
+    }
+
+    .emergency-cta {
+        padding: 70px 20px;
+    }
+
+    .emergency-cta h2 {
+        font-size: 34px;
+    }
+
+    .big-call-button {
+        width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+}
+
+
+/* =================================================
+   SMALL MOBILE
+   Below 480px
+================================================= */
+
+@media (max-width: 479px) {
+
+    .emergency-hero {
+        min-height: 75vh;
+    }
+
+    .emergency-content h1 {
+        font-size: 39px;
+    }
+
+    .emergency-content h2 {
+        font-size: 25px;
+    }
+
+    .emergency-description {
+        font-size: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .emergency-card {
+        padding: 25px;
+    }
+
+    .card-icon {
+        font-size: 36px;
+    }
+
+    .emergency-card h3 {
+        font-size: 20px;
+    }
+
+    .emergency-card p {
+        font-size: 14px;
+    }
+
+    .emergency-cta h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+
+.custom-navbar {
+    min-height: 82px;
+    background: rgba(17, 16, 14, 0.96);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 100;
+}
+
+.custom-navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--cream);
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    box-shadow:
+        0 0 15px rgba(214, 173, 85, 0.18);
+
+    transition: 0.4s;
+}
+
+.logo-mark::before {
+    content: "";
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+}
+
+.logo-mark span {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.logo:hover .logo-mark {
+    transform: rotate(15deg) scale(1.08);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.logo-text small {
+    color: var(--gold);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #d9d2c4;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold-light);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+ /* ========================================= */
+ /* LARGE DESKTOP - 1400px AND ABOVE */
+ /* ========================================= */
+
+@media (min-width: 1400px) {
+
+    .custom-navbar .container {
+        max-width: 1320px;
+    }
+
+    .nav-links {
+        gap: 28px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================= */
+/* DESKTOP - 1200px TO 1399.98px */
+/* ========================================= */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    .custom-navbar .container {
+        max-width: 1140px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+}
+
+
+/* ========================================= */
+/* LAPTOP - 992px TO 1199.98px */
+/* ========================================= */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .custom-navbar .container {
+        max-width: 960px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================= */
+/* TABLET - 768px TO 991.98px */
+/* ========================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .custom-navbar .container {
+        max-width: 720px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+
+        /* 4 links in one row */
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 3px;
+    }
+}
+
+
+/* ========================================= */
+/* MOBILE - 576px TO 767.98px */
+/* ========================================= */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .custom-navbar .container {
+        max-width: 540px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+
+        /* 4 links in one row */
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 8px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px 2px;
+    }
+}
+
+
+/* ========================================= */
+/* SMALL MOBILE - BELOW 576px */
+/* ========================================= */
+
+@media (max-width: 575.98px) {
+
+    .custom-navbar .container {
+        width: 100%;
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo-text strong {
+        font-size: 14px;
+    }
+
+    .logo-text small {
+        font-size: 7px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+
+        /* 4 links in first row */
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 7px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 8px 1px;
+    }
+}

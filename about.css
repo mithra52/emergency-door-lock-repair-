@@ -1,0 +1,889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111111;
+    color: #f5f0e6;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero {
+    min-height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(17,17,17,0.72),
+            rgba(17,17,17,0.92)
+        ),
+        url("images/door.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.12);
+    filter: blur(80px);
+    animation: glowMove 5s ease-in-out infinite alternate;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: heroEnter 1.2s ease forwards;
+}
+
+.small-title,
+.section-label {
+    color: #d4af37;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.about-hero h1 {
+    font-size: clamp(50px, 8vw, 100px);
+    font-weight: 800;
+    letter-spacing: 8px;
+    margin: 15px 0;
+}
+
+.about-hero h1 span,
+.about-text span,
+.section-heading span,
+.about-services span,
+.about-cta span {
+    color: #d4af37;
+}
+
+.hero-description {
+    color: #ddd;
+    font-size: 18px;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience-section {
+    padding: 100px 0;
+    background: #151515;
+}
+
+.about-text h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.15;
+    margin: 15px 0 25px;
+}
+
+.about-text p {
+    color: #bdbdbd;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* STATS */
+
+.stats-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    padding: 35px 20px;
+    text-align: center;
+    background: #1c1c1c;
+    border: 1px solid rgba(212,175,55,0.3);
+    transition: 0.4s ease;
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.stat-card:nth-child(3) {
+    grid-column: span 2;
+    animation-delay: 1.4s;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+    box-shadow: 0 15px 40px rgba(212,175,55,0.12);
+}
+
+.stat-number {
+    color: #d4af37;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.stat-title {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.stat-card p {
+    color: #999;
+    margin: 8px 0 0;
+}
+
+
+/* =========================
+   WHY SECTION
+========================= */
+
+.why-section {
+    padding: 100px 0;
+    background: #111111;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 55px;
+}
+
+.section-heading h2,
+.about-services h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    margin: 15px 0;
+}
+
+.section-heading > p:last-child,
+.service-intro {
+    color: #999;
+}
+
+.why-card {
+    height: 100%;
+    padding: 35px;
+    background: #191919;
+    border: 1px solid rgba(212,175,55,0.18);
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-card::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s ease;
+}
+
+.why-card:hover::before {
+    width: 100%;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212,175,55,0.5);
+}
+
+.icon-circle {
+    width: 55px;
+    height: 55px;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.why-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    color: #999;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.about-services {
+    padding: 100px 0;
+    background: #151515;
+}
+
+.service-intro {
+    margin-bottom: 40px;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.service-list span {
+    padding: 14px 22px;
+    color: #ddd;
+    border: 1px solid rgba(212,175,55,0.35);
+    background: #191919;
+    transition: 0.3s ease;
+}
+
+.service-list span:hover {
+    color: #111;
+    background: #d4af37;
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.about-cta {
+    padding: 100px 0;
+    background: #111111;
+}
+
+.about-cta h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin: 15px 0;
+}
+
+.about-cta p:not(.section-label) {
+    color: #999;
+}
+
+.cta-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.gold-btn,
+.outline-btn {
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.gold-btn {
+    color: #111;
+    background: #d4af37;
+}
+
+.gold-btn:hover {
+    color: #111;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+}
+
+.outline-btn {
+    color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+.outline-btn:hover {
+    color: #111;
+    background: #d4af37;
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.about-footer {
+    padding: 50px 0 30px;
+    background: #0b0b0b;
+    border-top: 1px solid rgba(212,175,55,0.2);
+}
+
+.about-footer h3 {
+    color: #d4af37;
+    letter-spacing: 3px;
+}
+
+.about-footer p {
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.about-footer a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.about-footer hr {
+    border-color: #333;
+    margin: 30px 0;
+}
+
+.about-footer small {
+    color: #777;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(-80px, -20px);
+    }
+
+    to {
+        transform: translate(80px, 30px);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .experience-section,
+    .why-section,
+    .about-services,
+    .about-cta {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+}
+
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+   
+
+    .about-hero {
+        min-height: 60vh;
+    }
+
+    .experience-section,
+    .why-section,
+    .about-services,
+    .about-cta {
+        padding: 85px 0;
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+   
+
+    .about-hero {
+        min-height: 55vh;
+    }
+
+    .experience-section,
+    .why-section,
+    .about-services,
+    .about-cta {
+        padding: 75px 0;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .stats-area {
+        margin-top: 20px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .about-hero {
+        min-height: 55vh;
+        padding: 50px 15px;
+    }
+
+    .about-hero h1 {
+        letter-spacing: 4px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .experience-section,
+    .why-section,
+    .about-services,
+    .about-cta {
+        padding: 65px 0;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .stats-area {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    .why-card {
+        padding: 28px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .service-list {
+        gap: 10px;
+    }
+
+    .service-list span {
+        width: 100%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .gold-btn,
+    .outline-btn {
+        text-align: center;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 479px) {
+
+    .logo-box {
+        gap: 8px;
+    }
+
+    .logo-circle {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+    }
+
+    .logo-text strong {
+        font-size: 11px;
+    }
+
+    .logo-text small {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .about-hero h1 {
+        font-size: 45px;
+        letter-spacing: 3px;
+    }
+
+    .small-title,
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .about-text h2,
+    .section-heading h2,
+    .about-services h2,
+    .about-cta h2 {
+        font-size: 32px;
+    }
+
+    .stat-card {
+        padding: 28px 15px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .why-card {
+        padding: 25px 20px;
+    }
+
+    .about-footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+
+
+.custom-navbar {
+    min-height: 82px;
+    background: rgba(17, 16, 14, 0.96);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 100;
+}
+
+.custom-navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--cream);
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    box-shadow:
+        0 0 15px rgba(214, 173, 85, 0.18);
+
+    transition: 0.4s;
+}
+
+.logo-mark::before {
+    content: "";
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+}
+
+.logo-mark span {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.logo:hover .logo-mark {
+    transform: rotate(15deg) scale(1.08);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text strong {
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.logo-text small {
+    color: var(--gold);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: #d9d2c4;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold-light);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+ /* ========================================= */
+ /* LARGE DESKTOP - 1400px AND ABOVE */
+ /* ========================================= */
+
+@media (min-width: 1400px) {
+
+    .custom-navbar .container {
+        max-width: 1320px;
+    }
+
+    .nav-links {
+        gap: 28px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================= */
+/* DESKTOP - 1200px TO 1399.98px */
+/* ========================================= */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    .custom-navbar .container {
+        max-width: 1140px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+}
+
+
+/* ========================================= */
+/* LAPTOP - 992px TO 1199.98px */
+/* ========================================= */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .custom-navbar .container {
+        max-width: 960px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================= */
+/* TABLET - 768px TO 991.98px */
+/* ========================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .custom-navbar .container {
+        max-width: 720px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+
+        /* 4 links in one row */
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 3px;
+    }
+}
+
+
+/* ========================================= */
+/* MOBILE - 576px TO 767.98px */
+/* ========================================= */
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .custom-navbar .container {
+        max-width: 540px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+
+        /* 4 links in one row */
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 8px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px 2px;
+    }
+}
+
+
+/* ========================================= */
+/* SMALL MOBILE - BELOW 576px */
+/* ========================================= */
+
+@media (max-width: 575.98px) {
+
+    .custom-navbar .container {
+        width: 100%;
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo-text strong {
+        font-size: 14px;
+    }
+
+    .logo-text small {
+        font-size: 7px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+
+        /* 4 links in first row */
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 7px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        padding: 8px 1px;
+    }
+}
